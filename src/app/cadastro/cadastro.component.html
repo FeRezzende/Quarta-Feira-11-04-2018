@@ -1,0 +1,52 @@
+<div class="container">
+<h1>Cadastro de Clientes</h1>
+
+  <form [formGroup]="formGroup" (ngSubmit)="cadastrar()">
+
+    <div class="form-group">
+      <label>Nome: </label>
+      <input type="text" class="form-control" name="nome" formControlName="nome">
+      <small *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" id="emailHelp" class="form-text text-muted">Nome Invalido</small>
+    </div>
+
+    <div class="form-group">
+      <label>Endereço </label>
+      <input type="text" class="form-control" name="endereco" formControlName="endereco">
+      <small *ngIf="formGroup.controls.endereco.dirty && formGroup.controls.endereco.errors" id="enderecoHelp" class="form-text text-muted">
+      Endereço Inválido</small>
+    </div>
+
+    <div class="form-group">
+      <label>Telefone: </label>
+      <input type="text" class="form-control" name="telefone" formControlName="telefone">
+      <small *ngIf="formGroup.controls.telefone.dirty && formGroup.controls.telefone.errors" id="emailHelp" class="form-text text-muted">
+      Telefone Inválido</small>
+    </div>
+
+    <div class="form-group">
+      <label>Data de nascimento </label>
+      <input type="text" class="form-control" name="dataNascimento" formControlName="dataNascimento">
+      <small *ngIf="formGroup.controls.dataNascimento.dirty && formGroup.controls.dataNascimento.errors" id="emailHelp" class="form-text text-muted">
+      Email Inválido</small>
+    </div>
+
+    <div class="form-group">
+      <label>E-mail: </label>
+      <input type="text" class="form-control" name="email" formControlName="email">
+      <small *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" id="emailHelp" class="form-text text-muted">
+      Email Inválido</small>
+    </div>
+    <div class="form-group">
+      <label>senha </label>
+      <input type="password" class="form-control" name="senha" formControlName="senha">
+      <small *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" id="senhaHelp" class="form-text text-muted">
+      Senha Inválido</small>
+    </div>
+
+
+    <div class="form-group">
+      <button class="btn btn-primary" [disabled]="formGroup.invalid">Cadastrar</button>
+    </div>
+  </form>
+
+</div>
